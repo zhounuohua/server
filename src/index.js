@@ -1,5 +1,6 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const Home = require('./containers/Home');
 
 app.get('/', (req, res) => res.send(`
     <html>
