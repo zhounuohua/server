@@ -9,6 +9,7 @@ module.exports = {
         filename:'bundle.js',
         path: path.resolve(__dirname, 'build')
     },
+    externals: [nodeExternals()],
     module: {
         reles:[{
             test: /\.js?$/,
@@ -23,5 +24,4 @@ module.exports = {
             }
         }]
     }
-
 }

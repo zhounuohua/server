@@ -1,11 +1,11 @@
-const React =  require('react');
+const React = require('react');
 
-const Hemo = () => {
-    return <div>hemo</div>
+const Home = () => {
+	return <div>home</div>
 }
 
 module.exports = {
-    default : Home
+	default: Home
 }
 
 
