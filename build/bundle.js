@@ -71,14 +71,49 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/containers/Home/index.js":
+/*!**************************************!*\
+  !*** ./src/containers/Home/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nvar Home = function Home() {\n\treturn React.createElement(\n\t\t'div',\n\t\tnull,\n\t\t'home'\n\t);\n};\n\nmodule.exports = {\n\tdefault: Home\n};\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar express = __webpack_require__(/*! express */ \"express\");\nvar app = express();\nvar Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\napp.get('/', function (req, res) {\n    return res.send('<html>\\n        <head>\\n            <title>hello</title>\\n        </head>\\n        <body>\\n            <h3>hello</h3>\\n            <p>word</p>\\n        </body>\\n    </html>');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "express":
+/*!**************************!*\
+  !*** external "express" ***!
+  \**************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed: Error: Plugin/Preset files are not allowed to export objects, only functions. In /Users/zhounuohua/server/node_modules/babel-preset-react/lib/index.js\\n    at createDescriptor (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:178:11)\\n    at items.map (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:109:50)\\n    at Array.map (native)\\n    at createDescriptors (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:109:29)\\n    at createPresetDescriptors (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:101:10)\\n    at passPerPreset (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:58:96)\\n    at cachedFunction (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/caching.js:33:19)\\n    at presets.presets (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-descriptors.js:29:84)\\n    at mergeChainOpts (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-chain.js:315:26)\\n    at /Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-chain.js:278:7\\n    at buildRootChain (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/config-chain.js:68:29)\\n    at loadPrivatePartialConfig (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/partial.js:85:55)\\n    at Object.loadPartialConfig (/Users/zhounuohua/server/node_modules/@babel/core/lib/config/partial.js:110:18)\\n    at Object.<anonymous> (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:140:26)\\n    at next (native)\\n    at asyncGeneratorStep (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:3:103)\\n    at _next (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:5:194)\\n    at /Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:5:364\\n    at Object.<anonymous> (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:5:97)\\n    at Object._loader (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:220:18)\\n    at Object.loader (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:56:18)\\n    at Object.<anonymous> (/Users/zhounuohua/server/node_modules/babel-loader/lib/index.js:51:12)\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
 
 /***/ })
 
