@@ -1,9 +1,11 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from "react-dom/server";
-import Home from './containers/Home';
+import Home from '../containers/Home';
 
 const app = express();
+app.use(express.static('public'));
+
 const content = renderToString(<Home />)
 app.get('/', (req, res) => res.send(
     `
@@ -22,10 +24,8 @@ app.get('/', (req, res) => res.send(
       You need to enable JavaScript to run this app.
     </noscript>
     
-    <div id="root">
-        ${content}
-    </div>
-   
+    <div id="root">${content}</div>
+    <script src='/index.js'></script>   
   </body>
 </html>
 
