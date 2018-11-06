@@ -4,7 +4,9 @@ const Home = () => {
 	return (
 	<div>
 		<div>hello dell lee!</div>
-		<button onClick={()=>{alert("click")}}>click</button>
+		<button onClick={()=>{alert("click")}}>
+			click
+		</button>
 	</div>
 	)}
 
