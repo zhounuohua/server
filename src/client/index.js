@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDom from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Routes from '../Routes';
-import { createStore } from 'redux';
-import{ Provider } from 'react-redux';
+import getStote from '../store'
 
-const reducer = (state = {name:'dell'},action)=> {
-    return state
-};
-
-const store = createStore(reducer);
 const App = () => {
     return (
-        <Provider store={store}>
+        <Provider store={getStote()}>
             <BrowserRouter>
                 {Routes}
             </BrowserRouter>
