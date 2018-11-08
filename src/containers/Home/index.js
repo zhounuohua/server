@@ -19,18 +19,25 @@ class Home  extends Component {
 				</button>
 			</div>
 		)
-	}
+	};
 	componentDidMount(){
-		this.props.getHomeList();
-	}
+		if(!this.props.list.length){
+			this.props.getHomeList();
+		}
+	};
 };
+
+Home.loadData = (store) =>{
+	return store.dispatch(getHomeListData())
+}
+
 const mapStateToProps = (state)=>({
 	list:state.home.newsList
 });
 const mapDispatchToProps = (dispatch) =>({
 	getHomeList(){
 		dispatch(getHomeListData(dispatch))
-	}
+	},
 })
 
 export default connect( mapStateToProps, mapDispatchToProps )(Home);
