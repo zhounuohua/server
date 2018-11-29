@@ -1,0 +1,4 @@
+const CHANGE_LOGIN = 'header/CHANGE_LOGIN';
+const CHANGE_LOGOUT = 'header/CHANGE_LOGOUT';
+
+export { CHANGE_LOGIN , CHANGE_LOGOUT}

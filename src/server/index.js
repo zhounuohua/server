@@ -1,23 +1,34 @@
 import express from 'express';
-import { matchRoutes} from 'react-router-config';
+import proxy from 'express-http-proxy';
+import { matchRoutes } from 'react-router-config';
 import { render } from './utils';
-import { getStote } from '../store'
+import { getStore } from '../store';
 import routes from '../Routes';
 
 const app = express();
 app.use(express.static('public'));
 
-app.get('*', function(req, res){
-    const store = getStote();
-const matchchedRoutes = matchRoutes(routes, req.path);
-const promises=[];
-	matchchedRoutes.forEach(item=>{
-		if(item.route.loadData){
+
+app.use('/api', proxy('http://47.95.113.63', {
+    proxyReqPathResolver: function (req) {
+        return '/ssr/api' + req.url;
+    }
+}));
+
+app.get('*', function (req, res) {
+    const store = getStore(req);
+	// 根据路由的路径，来往store里面加数据
+    const matchedRoutes = matchRoutes(routes, req.path);
+	// 让matchRoutes里面所有的组件，对应的loadData方法执行一次
+    const promises = [];
+	matchedRoutes.forEach(item => {
+		if (item.route.loadData) {
 			promises.push(item.route.loadData(store))
 		}
     });
-    Promise.all(promises).then(() =>{
-        res.send(render(store,routes, req))
+    console.log(promises);
+    Promise.all(promises).then(() => {
+        res.send(render(store, routes, req))
     })
 });
 

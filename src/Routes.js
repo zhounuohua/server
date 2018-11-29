@@ -1,23 +1,25 @@
 import Login from './containers/Login';
 import Home from './containers/Home';
+import App from './App'
 
-export default [
+export default[{
+    path:'/',
+    component:App,
+    loadData:App.loadData,
+    routes: [
     {
         path:'/',
         component:Home,
         exact:true,
         loadData:Home.loadData,
         key:'home',
-        // routes:[{
-        //     path:'/ttt',
-        //     component:Login,
-        //     exact:true,
-        //     key:'ttt',
-        // }]
     },{
         path:'/login',
         component:Login,
         exact:true,
         key:'login'
     }
-]
+
+    ]    
+}]
+
